@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> inscription page </title>
+    <script src="../javaScript/Inscription.js" defer></script>
+    <link rel="stylesheet" href="../styles/Inscription.css" >
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+</head>
+
+<body>
+       
+    <div id="navbar-container"></div>
+    <script src="../javaScript/navbar.js"></script>
+    
+    <div class="brand">
+        <h1 >Whispering <br> <span>Aura</span></h1>
+    </div>
+<h1 class="slogan"><i><b>Worn like a whisper remembered like a dream</b></i></h1>
+<div class="form">
+   <h2 style="text-align: center;">Créer un Compte </h2>
+
+   <form>
+      <div class="row">
+         <div class="registration">
+           <label class="label"><b>Prénom *</b></label> <br>
+           <input required  class="input" type="text" placeholder="Saisir votre Prénom">
+         </div>
+            <br>
+            <br>
+           <div class="registration">
+              <label ><b>Nom *</b></label> 
+                <br>
+             <input required  class="input" type="text" placeholder="Saisir votre Nom">
+           </div>
+            <br>
+            <br>
+        </div>
+        
+       <div class="gender">
+        <label class="gender-label"><b>Gender *</b></label>
+        <br>
+           <div class="genderhf">
+           <label class="radio">
+            <input type="radio" name="gender" value="female">
+            <span class="custom-radio"></span> Femme
+          </label>
+          <br>
+          <label class="radio">
+            <input type="radio" name="gender" value="male">
+            <span class="custom-radio"></span> Homme
+          </label>
+          <br>
+      </div>
+    </div>
+       <br>
+         <div class="registration">
+           <label><b>Email *</b></label> <br>
+           <input required   class="input" type="email" placeholder="Saisir votre Email">
+
+         </div>
+         <br>
+         <br>
+
+         <div class="registration">
+           <label><b>Mot de passe *</b></label> <br>
+           <input required  class="input" type="password" placeholder="Créez un mot de passe fort" oninput="checkStrength(this.value)">
+         </div>
+  <div class="strength-area">
+    <div class="bars">
+      <div class="bar" id="b1"></div>
+      <div class="bar" id="b2"></div>
+      <div class="bar" id="b3"></div>
+      <div class="bar" id="b4"></div>
+    </div>
+
+    <div class="strength-label">
+      <span class="strength-text" id="slabel">—</span>
+      <span class="strength-hint" id="shint"></span>
+    </div>
+
+    <div class="criteria">
+      <div class="criterion" id="c-len"><div class="dot"></div>8 caractères min.</div>
+      <div class="criterion" id="c-upper"><div class="dot"></div>Majuscule</div>
+      <div class="criterion" id="c-num"><div class="dot"></div>Chiffre</div>
+      <div class="criterion" id="c-special"><div class="dot"></div>Symbole (!@#...)</div>
+    </div>
+  </div>
+         <br>
+         <br>
+ <div class="confirm-pwd">
+  <label><b>Confirmer le mot de passe *</b></label><br>
+  <input required class="input" type="password" id="confirm-pwd" placeholder="Répétez votre mot de passe" oninput="checkConfirm()">
+  <span class="error-msg" id="confirm-error"></span>
+</div>
+<br><br>
+
+         <div class="checkbox-group">
+    <input type="checkbox" id="terms" required>
+    <label for="terms">
+        J'accepte les <a href="#"><b>Terms & Conditions</b></a> et la <a href="#"><b>Privacy Policy</b></a>
+    </label>
+ </div>
+ <br>
+ <br>
+
+
+  <div class="captcha">
+  <div class="captcha-box">
+    <input type="checkbox" id="not-robot">
+    <label for="not-robot">I'm not a robot</label>
+  
+  </div>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/RecaptchaLogo.svg" alt="reCAPTCHA" width="30">
+</div>
+
+
+         <button class="inscription-button submitbutton" type="submit">
+              Continue
+         </button>
+
+         <p class="login-link"><b> Vous avez déjà un compte ? </b><a href="#" >Se connecter</a> </p>
+        </form>
+      </div>
+    </body>
+</html>

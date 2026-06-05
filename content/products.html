@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection Whispering Aura</title>
+    <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <script src="../javaScript/navbar.js"></script>
+
+
+    <h1 class="sr-only">Whispering Aura — Notre Collection</h1>
+    <div id="product-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalBtn()"><i class="fa fa-times"></i></button>
+            <div class="modal-inner">
+                <div class="modal-image-side">
+                    <img src="#" id="modal-img" alt="Visuel du parfum">
+                    <div class="modal-price-badge" id="modal-price"></div>
+                </div>
+                <div class="modal-info-side">
+                    <p class="modal-family-label" id="modal-family"></p>
+                    <h2 id="modal-name"> . </h2>
+                    <p class="modal-desc" id="modal-description"></p>
+                    <div class="modal-notes">
+                        <div class="note-block">
+                            <span class="note-icon">◎</span>
+                            <div>
+                                <p class="note-label">Note de tête</p>
+                                <p class="note-value" id="modal-note-tete"></p>
+                            </div>
+                        </div>
+                        <div class="note-block">
+                            <span class="note-icon">◉</span>
+                            <div>
+                                <p class="note-label">Note de cœur</p>
+                                <p class="note-value" id="modal-note-coeur"></p>
+                            </div>
+                        </div>
+                        <div class="note-block">
+                            <span class="note-icon">●</span>
+                            <div>
+                                <p class="note-label">Note de fond</p>
+                                <p class="note-value" id="modal-note-fond"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-occasion">
+                        <p class="note-label">Occasions</p>
+                        <div class="occasion-tags" id="modal-occasions"></div>
+                    </div>
+                    <button class="modal-add-btn" id="modal-add-btn">
+                        <i class="fa fa-bag-shopping"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="filter-bar">
+            <h2 class="filter-title">Filtres</h2>
+            <div class="recherche">
+                <div class="search-wrapper">
+                    <i class="fa fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Rechercher un parfum…">
+                </div>
+                <button id="search-btn" onclick="applyFilters()">Rechercher</button>
+            </div>
+            <div class="olfactive-families">
+                <details open>
+                    <summary>Familles olfactives</summary>
+                    <ul>
+                        <li><label><input type="checkbox" value="Floral" onchange="applyFilters()"> Floral</label></li>
+                        <li><label><input type="checkbox" value="Boisé" onchange="applyFilters()"> Boisé</label></li>
+                        <li><label><input type="checkbox" value="Oriental" onchange="applyFilters()"> Oriental</label></li>
+                        <li><label><input type="checkbox" value="Épicé" onchange="applyFilters()"> Épicé</label></li>
+                        <li><label><input type="checkbox" value="Tropical" onchange="applyFilters()"> Tropical</label></li>
+                        <li><label><input type="checkbox" value="Gourmand" onchange="applyFilters()"> Gourmand</label></li>
+                        <li><label><input type="checkbox" value="Aromatique" onchange="applyFilters()"> Aromatique</label></li>
+                        <li><label><input type="checkbox" value="Hespéridé" onchange="applyFilters()"> Hespéridé</label></li>
+                        <li><label><input type="checkbox" value="Frais" onchange="applyFilters()"> Frais</label></li>
+                    </ul>
+                </details>
+            </div>
+            <div class="price-filter">
+                <h3>Prix max : <span id="price-display">250€</span></h3>
+                <input type="range" id="price-range" min="50" max="250" value="250" step="5" oninput="updatePrice(this.value); applyFilters()">
+                <div class="price-bounds"><span>50€</span><span>250€</span></div>
+            </div>
+            <div class="occasions-filter">
+                <details open>
+                    <summary>Occasions</summary>
+                    <ul>
+                        <li><label><input type="checkbox" value="Jour" onchange="applyFilters()"> Jour</label></li>
+                        <li><label><input type="checkbox" value="Nuit" onchange="applyFilters()"> Nuit</label></li>
+                        <li><label><input type="checkbox" value="Hiver" onchange="applyFilters()"> Hiver</label></li>
+                        <li><label><input type="checkbox" value="Été" onchange="applyFilters()"> Été</label></li>
+                    </ul>
+                </details>
+            </div>
+
+            <button class="reset-btn" onclick="resetFilters()"><i class="fa fa-rotate-left"></i> Réinitialiser</button>
+        </div>
+        <div class="products-section">
+            <p class="result-count" id="result-count"></p>
+            <div id="products-grid" class="products"></div>
+            <div id="no-results" class="no-results" style="display:none">
+                <i class="fa fa-wind"></i>
+                <p>Aucun parfum ne correspond à votre recherche.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../javaScript/products.js"></script>
+</body>
+</html>

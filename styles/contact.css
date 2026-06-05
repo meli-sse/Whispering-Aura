@@ -1,0 +1,126 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', sans-serif; 
+    background:#f5ede3;
+    overflow-x: hidden; 
+} 
+
+/* CONTAINER */ 
+.container { 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    padding: 50px; 
+} 
+
+/* GLASS EFFECT */ 
+.glass { 
+    background: #fffaf7; 
+    backdrop-filter: blur(15px); 
+    border-radius: 20px; 
+    padding: 30px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+} 
+
+/* FORM */ 
+.form-section { width: 45%; } 
+
+.form-section h2 { color: #b48a5a; } 
+
+input, textarea { 
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0; 
+    border-radius: 12px;
+    border: 1px solid #e6d8cc;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #3a241d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #b48a5a;
+}
+
+/* SUCCESS MESSAGE */
+#successMessage {
+    color: #3a241d;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* INFO */
+.info-section {
+    width: 40%;
+}
+
+.info-section h1 {
+    font-size: 45px;
+    color: #3a241d;
+}
+
+.info-section span {
+    color: #b48a5a;
+}
+
+.info {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #3a241d;
+}
+
+/* PAPILLONS ANIMÉS */
+.butterfly {
+    position: fixed;
+    font-size: 30px;
+    animation: float 6s infinite ease-in-out;
+}
+
+.b1 { top: 20%; left: 10%; }
+.b2 { top: 70%; left: 80%; }
+.b3 { top: 50%; left: 50%; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-section, .info-section {
+        width: 100%;
+    }
+}

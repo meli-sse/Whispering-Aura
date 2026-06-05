@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering AURA - Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar  -->
+     <div id="navbar-container"></div>
+    <script src="../javaScript/navbar.js"></script>
+
+
+    <div class="login-container">
+        <div class="glass-card">
+            <div class="card-left">
+                <div class="brand-text">
+                    <p class="brand-subtitle">✦ Luxury Perfume</p>
+                    <h1 class="brand-name">Whispering<br><span class="brand-accent">AURA</span></h1>
+                </div>
+            </div>
+
+            <!-- Right Side: Login Form -->
+            <div class="card-right">
+                <h2 class="login-title">Login</h2>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <span class="input-icon">✉</span>
+                        <input type="email" id="email" placeholder="Entrez votre email" required>
+                        <span class="input-icon-right">✉</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" placeholder="Mot de passe" required>
+                        <span class="input-icon-right">🔒</span>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="loginBtn">Login</button>
+                </form>
+
+                <div class="form-footer">
+                    <a href="../content/Inscription.html" id="createAccount">Créer un compte</a>
+                    <span class="separator">|</span>
+                    <a href="#" id="forgotPassword">Mot de passe oublié ?</a>
+                </div>
+
+                <div class="status-msg" id="statusMsg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javaScript/login.js"></script>
+</body>
+</html>

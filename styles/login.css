@@ -1,0 +1,289 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#f5ede3;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 10px;       
+    display: flex;                  
+    justify-content: center;
+    align-items: center;
+}
+
+/* GLASS CARD */
+.glass-card {
+    display: flex;
+    width: 100%;
+    min-height: 450px;
+    background-color: #fffaf7;
+    border: 1px solid #e6d8cc;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(58, 36, 29, 0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LEFT SIDE */
+.card-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(248, 243, 239, 0.5) 0%, rgba(245, 238, 232, 0.5) 100%);
+    border-right: 1px solid #e6d8cc;
+}
+
+.perfume-img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 8px 20px rgba(180, 138, 90, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.perfume-img:hover {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    text-align: center;
+}
+
+.brand-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #b48a5a;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #3a241d;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.brand-accent {
+    font-size: 44px;
+    font-weight: 600;
+    color: #b48a5a;
+    display: block;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+/* RIGHT SIDE */
+.card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 50px;
+    background-color: #fffaf7;
+}
+
+.login-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #3a241d;
+    text-align: center;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* INPUT FIELDS */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 45px;
+    border: 1px solid #e6d8cc;
+    border-radius: 12px;
+    background-color: #fffaf7;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #3a241d;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(58, 36, 29, 0.5);
+    font-size: 13px;
+}
+
+.input-group input:focus {
+    border-color: #b48a5a;
+    background-color: #fffaf7;
+    box-shadow: 0 0 0 3px rgba(180, 138, 90, 0.15);
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #b48a5a;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.input-icon-right {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #b48a5a;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #3a241d;
+    color: #fffaf7;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(58, 36, 29, 0.2);
+}
+
+/* Hover effects: warm beige/gold tones */
+.login-btn:hover {
+    background-color: #b48a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(180, 138, 90, 0.3);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(58, 36, 29, 0.2);
+}
+
+/* FORM FOOTER LINKS */
+.form-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.form-footer a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12.5px;
+    color: #3a241d;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+
+.form-footer a:hover {
+    color: #b48a5a;
+    opacity: 1;
+}
+
+.separator {
+    color: #e6d8cc;
+    font-size: 12px;
+}
+
+/* STATUS MESSAGE */
+.status-msg {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 20px;
+}
+
+@media (max-width: 768px) {
+    .glass-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .card-left {
+        padding: 30px 20px 25px;
+        border-right: none;
+        border-bottom: 1px solid #e6d8cc;
+    }
+
+    .perfume-img {
+        width: 120px;
+    }
+
+    .brand-name {
+        font-size: 28px;
+    }
+
+    .brand-accent {
+        font-size: 36px;
+    }
+
+    .card-right {
+        padding: 35px 30px 40px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card-right {
+        padding: 30px 25px 35px;
+    }
+}

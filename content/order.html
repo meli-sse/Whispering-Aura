@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order page</title>
+    <link rel="stylesheet" href="../styles/order.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <script src="../javaScript/navbar.js"></script>
+
+<div class="grid-container">
+
+    
+    <div class="formulaire">
+        <form onsubmit="return validateForm()">
+            <h1>Information client</h1>
+
+            <label for="Nom">Nom</label>
+            <input type="text" id="Nom" placeholder="Entrez votre Nom">
+
+            <label for="Prénom">Prénom</label>
+            <input type="text" id="Prénom" placeholder="Entrez votre Prénom">
+
+            <label for="Email">Email</label>
+            <input type="text" id="Email" placeholder="Entrez votre Email">
+
+            <label for="Téléphone">Téléphone</label>
+            <input type="text" id="Téléphone" placeholder="Entrez votre numéro">
+
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" placeholder="Rue, Quartier, Ville">
+
+            <label for="Ville">Ville</label>
+            <input type="text" id="Ville" placeholder="Entrez le nom de votre ville">
+
+            <label for="wilaya-select">Wilaya</label>
+            <select id="wilaya-select" required>
+                <option value="" disabled selected>Choisir une wilaya</option>
+                <option>Adrar</option>
+                <option>Chlef</option>
+                <option>Laghouat</option>
+                <option>Oum El Bouaghi</option>
+                <option>Batna</option>
+                <option>Béjaïa</option>
+                <option>Biskra</option>
+                <option>Béchar</option>
+                <option>Blida</option>
+                <option>Bouira</option>
+                <option>Tamanrasset</option>
+                <option>Tébessa</option>
+                <option>Tlemcen</option>
+                <option>Tiaret</option>
+                <option>Tizi Ouzou</option>
+                <option>Alger</option>
+                <option>Djelfa</option>
+                <option>Jijel</option>
+                <option>Sétif</option>
+                <option>Saïda</option>
+                <option>Skikda</option>
+                <option>Sidi Bel Abbès</option>
+                <option>Annaba</option>
+                <option>Guelma</option>
+                <option>Constantine</option>
+                <option>Médéa</option>
+                <option>Mostaganem</option>
+                <option>M'Sila</option>
+                <option>Mascara</option>
+                <option>Ouargla</option>
+                <option>Oran</option>
+                <option>El Bayadh</option>
+                <option>Illizi</option>
+                <option>Bordj Bou Arreridj</option>
+                <option>Boumerdès</option>
+                <option>El Tarf</option>
+                <option>Tindouf</option>
+                <option>Tissemsilt</option>
+                <option>El Oued</option>
+                <option>Khenchela</option>
+                <option>Souk Ahras</option>
+                <option>Tipaza</option>
+                <option>Mila</option>
+                <option>Aïn Defla</option>
+                <option>Naâma</option>
+                <option>Aïn Témouchent</option>
+                <option>Ghardaïa</option>
+                <option>Relizane</option>
+            </select>
+            <input type="submit" value="Confirmer">
+        </form>
+    </div>
+
+    
+    <div class="panier">
+    <div class="panier-header">
+        <div class="panier-icon">🛒</div>
+        <h2>Mon Panier</h2>
+        <span class="panier-badge" id="panier-badge">0 article</span>
+    </div>
+
+    <div id="contenu-panier"></div>
+
+    <div class="panier-separator"></div>
+
+    <div class="total-section">
+        <div class="total-ligne">
+            <span>Sous-total</span>
+            <span id="sous-total">0 €</span>
+        </div>
+        <div class="total-ligne">
+            <span>Livraison</span>
+            <span>Gratuite ✓</span>
+        </div>
+        <div class="total-final">
+            <span class="total-label">Total</span>
+            <span class="total-montant" id="affichage-total">0 €</span>
+        </div>
+    </div>
+</div>
+
+   
+    <div class="paiment">
+        <h3>Mode de paiement</h3>
+        <div class="paiement-options">
+
+            <div class="paiement-carte selected" id="carte-livraison" onclick="selectPaiement('livraison')">
+                <span class="emoji">🚚</span>
+                <div>
+                    <div class="label">Paiement à la livraison</div>
+                    <div class="sublabel">Payez en espèces à la réception</div>
+                </div>
+                <div class="checkmark"></div>
+            </div>
+
+            <div class="paiement-carte" id="carte-cb" onclick="selectPaiement('cb')">
+                <span class="emoji">💳</span>
+                <div>
+                    <div class="label">Paiement via la carte</div>
+                    <div class="sublabel">Visa, Mastercard, CIB</div>
+                </div>
+                <div class="checkmark"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div> 
+
+<script src="../javaScript/order.js"></script>
+
+</body>
+</html>
